@@ -21,8 +21,8 @@ const storage = multer.diskStorage({
   
 const upload = multer({ storage: storage })
 const app = express();
-
-app.post("/",upload.single("avatar"),(req,res)=>{
+//Jehetu multiple file upload korbo tai upload.array use korte hobe and amader input er field name chilo avatar tai "avatar" diye dilam upload.array method a.
+app.post("/",upload.array("avatar"),(req,res)=>{
     res.send("success");
 })
 
